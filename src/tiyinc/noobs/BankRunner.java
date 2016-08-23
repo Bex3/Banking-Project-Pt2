@@ -9,11 +9,11 @@ public class BankRunner {
     public static void main(String[] args) {
         System.out.println("Running BankRunner");
         BankRunner runner = new BankRunner();
-        runner.StartBankingSystem();
+        runner.startBankingSystem();
 
 
     }
-    public void StartBankingSystem() {
+    public void startBankingSystem() {
         Scanner inputScanner = new Scanner(System.in);
         Bank myBank = new Bank();
 
@@ -24,10 +24,16 @@ public class BankRunner {
         } else {
             createNewAccount();
             BankAccount newAccount = createNewAccount(inputScanner);
+            Customer.newCustomer = new Customer();
+            newCustomer.setUserName(userName);
+            newCustomer.addBankAccount(newAccount);
+            myBank.addCustomer(new Customer());
         }
-
+        //myBank.printInfo();
+        System.out.println("Choose the account you would like to do something with. ");
     }
-     public boolean customerHasExistingAccounts(String userName) {
+
+    public boolean customerHasExistingAccounts(String userName) {
          if (userName.equals("Rebecca")) {
              System.out.println("We made it here");
          } return false;
@@ -49,7 +55,10 @@ public class BankRunner {
          int accountChoice = Integer.valueOf(in.nextLine());
          System.out.println("Initial balance?");
          double balance = Double.valueOf(in.nextLine());
+        BankAccount bankAccount = new BankAccount();
      }
+     //return bankAccount; //should return go here or before }
+
 
 
 

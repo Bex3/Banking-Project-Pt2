@@ -24,7 +24,12 @@ public class Customer {
     public void setBankAccounts(ArrayList<BankAccount> bankAccounts) {
         this.bankAccounts = bankAccounts;
     }
+ //   public void printInfo{
+ // }
 
+    public void addBankAccount(BankAccount bankAccount){
+      //  bankAccount.addBankAccount();
+    }
 
 
 }
