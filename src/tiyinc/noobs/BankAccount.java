@@ -7,8 +7,20 @@ import java.util.ArrayList;
  */
 public class BankAccount {
     private String name;
-    private int type;
+    private int type; //1. Checking 2. Saving 3. Retirement
     private double balance;
+
+//    public BankAccount(String name, int type, double balance) {
+//        this.name = name;
+//        this.type = type;
+//        this.balance = balance;
+//    }
+
+    public BankAccount(String name, int type, double balance) {
+        this.name = name;
+        this.type = type;
+        this.balance = balance;
+    }
 
     public String getName() {
         return name;
@@ -35,5 +47,7 @@ public class BankAccount {
     }
     public void printInfo(){
         System.out.println("Account name: " + name);
+        System.out.println("Account type" + type);
+        System.out.println("Balance " + balance);
     }
 }

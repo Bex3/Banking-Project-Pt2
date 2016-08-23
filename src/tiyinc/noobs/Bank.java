@@ -7,18 +7,22 @@ import java.util.ArrayList;
  */
 public class Bank {
     private ArrayList<Customer> customers = new ArrayList <Customer> ();
-
+    String name;
 
     public ArrayList<Customer> getCustomers() {
         return customers;
     }
     public void addCustomer(Customer customer){
-        //customer.addCustomer;
+        //Customer.addCustomer<Customer>;
     }
 
     public void setCustomers(ArrayList<Customer> customers) {
         this.customers = customers;
-    }    //private String bankName;
+    }
+
+    public void printInfo() {
+        System.out.println("Account name" + name);
+    }
 
 
 }

@@ -9,6 +9,8 @@ public class Customer {
     private String userName;
     private ArrayList<BankAccount> bankAccounts = new ArrayList<BankAccount>();
 
+
+
     public String getUserName() {
         return userName;
     }
@@ -24,11 +26,13 @@ public class Customer {
     public void setBankAccounts(ArrayList<BankAccount> bankAccounts) {
         this.bankAccounts = bankAccounts;
     }
- //   public void printInfo{
- // }
+    public void printInfo(){
+        System.out.println("UserName: " + userName);
+        for (BankAccount currentAccount: bankAccounts);
+    }
 
-    public void addBankAccount(BankAccount bankAccount){
-      //  bankAccount.addBankAccount();
+    public void addBankAccount(BankAccount account){
+      bankAccounts.add(account);
     }
 
 

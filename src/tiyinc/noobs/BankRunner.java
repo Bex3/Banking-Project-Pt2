@@ -22,14 +22,15 @@ public class BankRunner {
         if (customerHasExistingAccounts(userName)) {
             retrieveAndDisplayAccountInfo();
         } else {
-            createNewAccount();
             BankAccount newAccount = createNewAccount(inputScanner);
-            Customer.newCustomer = new Customer();
+
+
+            Customer newCustomer = new Customer();
             newCustomer.setUserName(userName);
             newCustomer.addBankAccount(newAccount);
             myBank.addCustomer(new Customer());
         }
-        //myBank.printInfo();
+        myBank.printInfo();
         System.out.println("Choose the account you would like to do something with. ");
     }
 
@@ -43,11 +44,11 @@ public class BankRunner {
          System.out.println("Retrieve and display account information");
      }
 
-     public void createNewAccount(Scanner in){
+     public BankAccount createNewAccount(Scanner in){
          System.out.println("Create new account");
-         BankAccount myBankAccount = new BankAccount();
+         //BankAccount myBankAccount = new BankAccount(String accountName, int accountChoice, double balance); //scope issue new account isn't created yet
          System.out.println("What is the account name?");
-         String AccountName = in.nextLine();
+         String accountName = in.nextLine();
          System.out.println("What's the type of account?");
          System.out.println("1. Checking");
          System.out.println("2. Savings");
@@ -55,9 +56,25 @@ public class BankRunner {
          int accountChoice = Integer.valueOf(in.nextLine());
          System.out.println("Initial balance?");
          double balance = Double.valueOf(in.nextLine());
-        BankAccount bankAccount = new BankAccount();
+         String accountTypeString = null;
+         if (accountChoice == 1) {
+             accountTypeString = "Checking";
+         } else if (accountChoice == 2){
+             accountTypeString = "Saving";
+         } else if (accountChoice==3){
+             accountTypeString = "Retirement";
+         }
+
+         // put stff in it!!!!!!!!!!!!!
+         BankAccount myBankAccount = new BankAccount(accountName, accountChoice, balance);
+         myBankAccount.setName(accountName);
+         myBankAccount.setType(accountChoice);
+         myBankAccount.setBalance(balance);
+
+         myBankAccount.printInfo();
+         return myBankAccount; //should return go here or before }
      }
-     //return bankAccount; //should return go here or before }
+
 
 
 
